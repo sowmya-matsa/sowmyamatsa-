@@ -1,0 +1,222 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          leading: CircleAvatar(
+            radius: 12.0,
+            backgroundImage: AssetImage("assets/images/pic.jpg"),
+          ),
+        ),
+        body: Container(
+          padding: EdgeInsets.all(16.0),
+          child: Column(children: [
+            Text(
+              "Google",
+              style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
+            ),
+            Column(children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: Icon(Icons.search, color: Colors.blue),
+                ),
+                Icon(Icons.mic, color: Colors.blue),
+                Icon(Icons.scanner, color: Colors.blue),
+              ]),
+              MyScreen(),
+              Bar(),
+              Task(),
+              Pic(),
+            ]),
+          ]),
+        ),
+      ),
+    );
+  }
+}
+
+class MyScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 35.0),
+      child:
+          Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+        Row(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.wb_cloudy, color: Colors.grey),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(width: 14.0),
+                    Text("28 c in somaram"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text("Mostly cloudy"),
+                  ],
+                )
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(width: 12.0),
+                    Text("31/19"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(Icons.umbrella_rounded),
+                    Text("20% today"),
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
+      ]),
+    );
+  }
+}
+
+class Bar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      child: Row(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Center(
+                child: Text(
+                  "Choose your discover language",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              Container(
+                child: Icon(Icons.menu),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Task extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Container(
+        padding: EdgeInsets.all(15.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(children: [
+                  Container(
+                      width: 170,
+                      height: 75,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.blue[400],
+                      ),
+                      child: Center(
+                        child: Text("telugu"),
+                      )),
+                ]),
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        width: 170,
+                        height: 75,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(15.0),
+                          color: Colors.pink[400],
+                        ),
+                        child: Center(
+                          child: Text("hindi"),
+                        ),
+                      )
+                    ])
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Pic extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(left: 90.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Row(
+            children: [
+              Center(
+                child: CircleAvatar(
+                  radius: 70.0,
+                  backgroundImage: AssetImage("assets/images/sowmya.jpg"),
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
