@@ -1,0 +1,243 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 40.0,
+          horizontal: 16.0,
+        ),
+        child: Column(children: [
+          Row(children: [
+            Icon(
+              Icons.menu,
+              color: Colors.black,
+            ),
+            SizedBox(width: 12),
+            Container(
+              child: Text(
+                "Environment",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ]),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Container(
+              child: Column(
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset('assets/images/scenary.jpg',
+                            width: 300, height: 300),
+                      ]),
+                  Row(
+                    children: [
+                      Text(
+                        "Expose to Air pollutants",
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "and Heat Made worse by ",
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Climate Change ",
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Description(),
+                  Content(),
+                  Task(),
+                ],
+              ),
+            ),
+          ),
+        ]),
+      ),
+    );
+  }
+}
+
+class Description extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Row(children: [
+            CircleAvatar(
+              radius: 20.0,
+              backgroundImage: AssetImage('assets/images/girl.jpg'),
+            ),
+            Column(children: [
+              Row(children: [
+                SizedBox(width: 12),
+                Text("sowmya"),
+              ]),
+              Row(crossAxisAlignment: CrossAxixAlignment.start, children: [
+                SizedBox(width: 12),
+                Text("jul 17,2016"),
+              ]),
+            ]),
+          ]),
+        ),
+      ],
+    );
+  }
+}
+
+class Content extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  child: Text(
+                    "climate",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black38,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  child: Text(
+                    "Ground Breaking is a",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  child: Text(
+                    "classic example of english",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  child: Text(
+                    "archicture",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Task extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(children: [
+          Row(
+            children: [
+              Container(
+                child: Text(
+                  "climate change",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black38,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                child: Text(
+                  "let plant more trees from this",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ]),
+      ),
+    );
+  }
+}
