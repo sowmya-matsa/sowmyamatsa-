@@ -1,0 +1,218 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MainScreen(),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(children: [
+        Container(
+          height: 280,
+          width: 800,
+          child: FittedBox(
+            child: Image.asset(
+              "assets/images/mountain.jpg",
+              fit: BoxFit.fill,
+              height: 400,
+            ),
+          ),
+        ),
+        Fact(),
+        Fact1(),
+        Fact2(),
+      ]),
+    );
+  }
+}
+
+class Fact extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(children: [
+          Image.asset(
+            'assets/images/AI.jpg',
+            width: 120,
+            height: 200,
+          ),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Row(children: [
+              SizedBox(width: 13),
+              Text(
+                "Google Sematic Experience",
+                style: TextStyle(
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+              ),
+            ]),
+            Row(children: [
+              SizedBox(width: 13),
+              Text(
+                "let you play the word games with",
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+              ),
+            ]),
+            Row(children: [
+              SizedBox(width: 12),
+              Text(
+                "its A.I",
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+              ),
+            ]),
+            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              SizedBox(width: 12),
+              Text(
+                "22 hours ago",
+                style: TextStyle(
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black38,
+                ),
+              ),
+              SizedBox(width: 12),
+              Icon(
+                Icons.bookmark,
+                color: Colors.black38,
+              ),
+              SizedBox(width: 12),
+              Icon(
+                Icons.share,
+                color: Colors.black38,
+              ),
+            ]),
+          ]),
+        ]),
+      ),
+    ]);
+  }
+}
+
+class Fact1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(children: [
+          Image.asset(
+            'assets/images/phone.jpg',
+            width: 120,
+            height: 200,
+          ),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Row(children: [
+              SizedBox(width: 13),
+              Text(
+                "Europe shows the way in",
+                style: TextStyle(
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+              ),
+            ]),
+            Row(children: [
+              SizedBox(width: 13),
+              Text(
+                "online privacy",
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+              ),
+            ]),
+            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              SizedBox(width: 12),
+              Text(
+                "3 hours ago",
+                style: TextStyle(
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black38,
+                ),
+              ),
+              SizedBox(width: 12),
+              Icon(
+                Icons.bookmark,
+                color: Colors.black38,
+              ),
+              SizedBox(width: 12),
+              Icon(
+                Icons.share,
+                color: Colors.black38,
+              ),
+            ]),
+          ]),
+        ]),
+      ),
+    ]);
+  }
+}
+
+class Fact2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(children: [
+          Image.asset(
+            'assets/images/robert.jpg',
+            width: 120,
+            height: 80,
+          ),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+              SizedBox(width: 13),
+              Text(
+                "Robert de Niro in the new ",
+                style: TextStyle(
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+              ),
+            ]),
+            Row(children: [
+              SizedBox(width: 13),
+              Text(
+                "trial of Irishman",
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+              ),
+            ]),
+          ]),
+        ]),
+      ),
+    ]);
+  }
+}
