@@ -1,0 +1,214 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Options(),
+    );
+  }
+}
+
+class Options extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 50),
+        child: Column(
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+              Icon(Icons.menu, color: Colors.black),
+              Text(
+                "Amazon.in",
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.blue,
+                ),
+              ),
+              Icon(Icons.mic, color: Colors.black),
+              Icon(Icons.shopping_basket, color: Colors.black),
+            ]),
+            Search(),
+            Explore(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Search extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.blue[100],
+            ),
+            child: TextField(
+              cursorColor: Colors.black,
+              decoration: InputDecoration(
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.black,
+                  size: 20.0,
+                ),
+                border: InputBorder.none,
+                hintText: "Search...",
+              ),
+              onChanged: (newText) {
+                print(newText);
+              },
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Explore extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        SizedBox(height: 15),
+        Text(
+          "Explore the Categories",
+          style: TextStyle(
+            fontSize: 18.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
+          ),
+        ),
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.surround_sound),
+              Text("Echo and Alexa",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              SizedBox(width: 25),
+              Icon(Icons.star),
+            ]),
+        Divider(height: 12, thickness: 1.0, color: Colors.black),
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.surround_sound),
+              Text("Echo and Alexa",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              SizedBox(width: 25),
+              Icon(Icons.star),
+            ]),
+        Divider(height: 12, thickness: 1.0, color: Colors.black),
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.surround_sound),
+              Text("Echo and Alexa",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              SizedBox(width: 25),
+              Icon(Icons.star),
+            ]),
+        Divider(height: 12, thickness: 1.0, color: Colors.black),
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.surround_sound),
+              Text("Echo and Alexa",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              SizedBox(width: 25),
+              Icon(Icons.star),
+            ]),
+        Divider(height: 12, thickness: 1.0, color: Colors.black),
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.surround_sound),
+              Text("Echo and Alexa",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              SizedBox(width: 25),
+              Icon(Icons.star),
+            ]),
+        Divider(height: 12, thickness: 1.0, color: Colors.black),
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.surround_sound),
+              Text("Echo and Alexa",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              SizedBox(width: 25),
+              Icon(Icons.star),
+            ]),
+        Divider(height: 12, thickness: 1.0, color: Colors.black),
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.surround_sound),
+              Text("Echo and Alexa",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              SizedBox(width: 25),
+              Icon(Icons.star),
+            ]),
+        Divider(height: 12, thickness: 1.0, color: Colors.black),
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(Icons.surround_sound),
+              Text("Echo and Alexa",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black)),
+              SizedBox(width: 25),
+              Icon(Icons.star),
+            ]),
+        Divider(height: 12, thickness: 1.0, color: Colors.black),
+      ],
+    );
+  }
+}
