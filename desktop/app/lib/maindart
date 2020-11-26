@@ -1,0 +1,171 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Options(),
+    );
+  }
+}
+
+class Options extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Container(
+      padding: EdgeInsets.symmetric(horizontal: 35, vertical: 50),
+      child: Column(
+        children: [
+          Center(
+            child: Text(
+              "More",
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.w700,
+                color: Colors.black87,
+              ),
+            ),
+          ),
+          Divider(height: 12.0, thickness: 1.0, color: Colors.black),
+          Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(Icons.gps_fixed),
+                Text("Default workout mood\n using Gps to track",
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black)),
+                CircleAvatar(
+                  radius: 8.0,
+                  backgroundImage: AssetImage("assets/images/question.jpg"),
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                          width: 90,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: Colors.black45,
+                          ),
+                          child: Center(
+                              child: Text("outbox ",
+                                  style: TextStyle(color: Colors.white)))),
+                    ]),
+              ]),
+          Divider(height: 12.0, thickness: 1.0, color: Colors.black),
+          Settings(),
+          Divider(height: 12.0, thickness: 1.0, color: Colors.black),
+          Help(),
+          Divider(height: 12.0, thickness: 1.0, color: Colors.black),
+          Share(),
+          Divider(height: 12.0, thickness: 1.0, color: Colors.black),
+          Allow(),
+          Divider(height: 12.0, thickness: 1.0, color: Colors.black),
+          Work(),
+          Divider(height: 12.0, thickness: 1.0, color: Colors.black),
+        ],
+      ),
+    ));
+  }
+}
+
+class Settings extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Icon(Icons.settings),
+      Text("Settings\n set preferences,add and so on.",
+          style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w700,
+              color: Colors.black)),
+      Padding(
+        padding: const EdgeInsets.only(left: 20),
+        child: Icon(Icons.arrow_right),
+      ),
+    ]);
+  }
+}
+
+class Help extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Icon(Icons.settings),
+      Text("help center\nhelp an issue.Reach out to us.",
+          style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w700,
+              color: Colors.black)),
+      Padding(
+        padding: const EdgeInsets.only(left: 18),
+        child: Icon(Icons.arrow_right),
+      ),
+      Divider(height: 12.0, thickness: 1.0, color: Colors.black),
+    ]);
+  }
+}
+
+class Share extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Icon(Icons.settings),
+      Text("Share the app\nkindness is contagious.Spread",
+          style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w700,
+              color: Colors.black)),
+      Padding(
+        padding: const EdgeInsets.only(left: 12),
+        child: Icon(Icons.arrow_right),
+      ),
+    ]);
+  }
+}
+
+class Allow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Icon(Icons.settings),
+      Text("allow the app to track\nto slove those tracking quaries",
+          style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w700,
+              color: Colors.black)),
+      CircleAvatar(
+        radius: 8.0,
+        backgroundImage: AssetImage("assets/images/question.jpg"),
+      ),
+    ]);
+  }
+}
+
+class Work extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Icon(Icons.settings),
+      Text("how to work\nknows what happend behind.",
+          style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w700,
+              color: Colors.black)),
+      Padding(
+        padding: const EdgeInsets.only(left: 18),
+        child: Icon(Icons.arrow_right),
+      ),
+    ]);
+  }
+}
