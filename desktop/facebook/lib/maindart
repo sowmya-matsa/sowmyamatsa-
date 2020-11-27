@@ -1,0 +1,208 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Fb(),
+    );
+  }
+}
+
+class Fb extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        child: Column(
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+              CircleAvatar(
+                radius: 18.0,
+                backgroundImage: AssetImage('assets/images/profilepic.jpg'),
+              ),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blue[200],
+                  ),
+                  child: TextField(
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.search,
+                          color: Colors.black,
+                          size: 18.0,
+                        ),
+                        border: InputBorder.none,
+                        prefix: Row(
+                          children: [
+                            Text(
+                              "search",
+                              style: TextStyle(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                            ),
+                            SizedBox(width: 180.0),
+                            Icon(Icons.qr_code),
+                          ],
+                        )),
+                    onChanged: (newText) {
+                      print(newText);
+                    },
+                  ),
+                ),
+              ),
+              Icon(Icons.messenger),
+            ]),
+            Stories(),
+            Divider(height: 12.0, thickness: 10.0, color: Colors.grey),
+            Newsfeed(),
+            Description(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Stories extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 18.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Column(children: [
+            CircleAvatar(
+              radius: 30.0,
+              backgroundImage: AssetImage('assets/images/profilepic.jpg'),
+            ),
+            Text("your story"),
+          ]),
+          Column(
+            children: [
+              CircleAvatar(
+                radius: 30.0,
+                backgroundImage: AssetImage('assets/images/cat.jpg'),
+              ),
+              Text("animal"),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              CircleAvatar(
+                radius: 30.0,
+                backgroundImage: AssetImage('assets/images/man.jpg'),
+              ),
+              Text("manish"),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Newsfeed extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          CircleAvatar(
+            radius: 30.0,
+            backgroundImage: AssetImage('assets/images/cat.jpg'),
+          ),
+          Text("manish\ndesigner|spark...\n3days ago",
+              style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.w400,
+                color: Colors.black38,
+              )),
+          SizedBox(width: 40.0),
+          Icon(Icons.arrow_right, color: Colors.black),
+        ],
+      ),
+    );
+  }
+}
+
+class Description extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+            "Photography is the art, application, practice\nof creating durable images by recording\nlight such as photograpiic flim",
+            style: TextStyle(
+              fontSize: 13.0,
+              fontWeight: FontWeight.w400,
+              color: Colors.black,
+            )),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Image.asset(
+              "assets/images/mountain.jpg",
+              width: 350,
+              height: 120,
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+                "Photography is the art, application, practice\nof creating durable images by recording\nlight such as photograpiic flim",
+                style: TextStyle(
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                )),
+          ],
+        ),
+        Divider(height: 12.0, thickness: 2.0, color: Colors.black12),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CircleAvatar(
+              radius: 7.0,
+              backgroundImage: AssetImage('assets/images/profilepic.jpg'),
+            ),
+            CircleAvatar(
+              radius: 7.0,
+              backgroundImage: AssetImage('assets/images/profilepic.jpg'),
+            ),
+            Text("26", style: TextStyle(fontSize: 12.0)),
+            SizedBox(width: 250.0),
+            Text(
+              "7 comments",
+              style: TextStyle(
+                fontSize: 12.0,
+                fontWeight: FontWeight.w300,
+                color: Colors.black26,
+              ),
+            ),
+          ],
+        )
+      ],
+    );
+  }
+}
